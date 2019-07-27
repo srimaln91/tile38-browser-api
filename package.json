@@ -1,0 +1,21 @@
+{
+  "name": "tile38-browser-backend",
+  "version": "1.0.0",
+  "description": "The backend for tile38 data visualizer",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.0",
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "redis": "^2.8.0"
+  },
+  "scripts": {
+    "start": "tsc && node dist/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
