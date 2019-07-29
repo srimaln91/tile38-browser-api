@@ -1,3 +1,4 @@
+import cors from "cors";
 import Express from "express";
 import Router from "./router";
 
@@ -16,6 +17,7 @@ export default class HttpServer {
 
         let expressRouter: Express.Router = router.router;
 
+        this.app.use(cors());
         this.app.use("/", expressRouter)
 
         let port: number = 3003;
