@@ -13,7 +13,7 @@ GET <endpoint>/collections
 ### Get a list of objects in a specific collection
 
 ```text
-GET <endpiint>/collections/<collection>
+GET <endpoint>/collections/<collection>
 ```
 
 ### Get a single object
