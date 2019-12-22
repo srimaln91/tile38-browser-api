@@ -21,3 +21,13 @@ GET <endpiint>/collections/<collection>
 ```text
 GET <endpoint>//collections/<collection>/id/<id>
 ```
+
+## Configuration
+
+Use below environment variables to configure the application
+
+```text
+APP_PORT = 8080
+T38_HOST = localhost
+T38_PORT = 9851
+```

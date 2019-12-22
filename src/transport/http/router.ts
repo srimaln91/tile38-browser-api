@@ -18,7 +18,8 @@ export default class Router {
 
     private attachRoutes() {
 
-        let redisConfig = new RedisConn("34.87.7.98", 9851, 0);
+        let t38Port: string = process.env.T38_PORT || "9851"
+        let redisConfig = new RedisConn(process.env.T38_HOST || "localhost", parseInt(t38Port), 0);
         let redisClient = new RedisClient(redisConfig);
         redisClient.Connect();
 

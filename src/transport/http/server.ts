@@ -20,9 +20,9 @@ export default class HttpServer {
         this.app.use(cors());
         this.app.use("/", expressRouter)
 
-        let port: number = 3003;
+        let port: string = process.env.APP_PORT;
 
-        this.app.listen(port, err => {
+        this.app.listen(parseInt(port), err => {
             if (err) {
                 return console.error(err);
             }
