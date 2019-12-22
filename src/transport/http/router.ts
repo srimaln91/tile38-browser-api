@@ -18,11 +18,10 @@ export default class Router {
 
     private attachRoutes() {
 
-        let redisConfig = new RedisConn("localhost", 9851, 0);
+        let redisConfig = new RedisConn("34.87.7.98", 9851, 0);
         let redisClient = new RedisClient(redisConfig);
         redisClient.Connect();
 
-        // define the home page route
         this.router.get('/collections', (req, res) => {
 
             let cmd: RedisCommand = new RedisCommand("KEYS");
@@ -40,7 +39,6 @@ export default class Router {
 
         })
 
-        // define the about route
         this.router.get('/collections/:collection', (req, res) => {
             let cmd: RedisCommand = new RedisCommand("SCAN");
             cmd.AddArgument(req.params.collection);
@@ -56,7 +54,6 @@ export default class Router {
             });
         })
 
-        // define the about route
         this.router.get('/collections/:coll/id/:id', (req, res) => {
             let cmd: RedisCommand = new RedisCommand("GET");
             cmd.AddArgument(req.params.coll);
