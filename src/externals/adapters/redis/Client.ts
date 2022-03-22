@@ -31,17 +31,17 @@ export default class RedisClient implements RedisAdapterInterface {
         });
 
         this.client.on("connect", () => {
-            console.log("Connected");
+            console.log("Tile38 backend connected");
         });
 
-        this.client.on("error", (err) => {
+        this.client.on("error", (err: any) => {
             console.log("Error:", err);
         });
     }
 
     Exec(cmd: Command) {
         return new Promise((resolve, reject) => {
-            this.client.sendCommand(cmd.command, cmd.arguments, (err, result) => {
+            this.client.sendCommand(cmd.command, cmd.arguments, (err: any, result: unknown) => {
                 if (err) {
                     reject(err);
                 } else {
