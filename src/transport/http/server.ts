@@ -22,13 +22,8 @@ export default class HttpServer {
 
         let port: string = process.env.APP_PORT;
 
-        this.app.listen(parseInt(port), err => {
-            if (err) {
-                return console.error(err);
-            }
+        this.app.listen(parseInt(port), () => {
             return console.log(`server is listening on ${port}`);
         });
-
     }
-
 }
